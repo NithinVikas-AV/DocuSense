@@ -1,2 +1,5 @@
 chat_env/
 .env
+__pycache__/
+db/
+uploads/
