@@ -155,6 +155,7 @@ def create_rag_chain():
     history_aware_retriever = create_history_aware_retriever(
         llm, rag_retriever, contextualize_q_prompt,
     )
+    
     qa_system_prompt = (
         "You are an assistant for question-answering tasks. Use "
         "the following pieces of retrieved context to answer the "
