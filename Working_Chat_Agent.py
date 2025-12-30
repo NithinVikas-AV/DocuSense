@@ -97,7 +97,7 @@ def pdf_file_extract(file_name):
 
     faissdb.save_local(folder_path=db_dir, index_name=idx_name)
 
-llm = ChatGoogleGenerativeAI(model='gemini-2.5-flash', google_api_key=api_key)
+llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash', google_api_key=api_key)
 
 client = firestore.Client(project=project_id)
 
@@ -318,3 +318,7 @@ def handle_user_voice_interaction():
             firestore_history.add_user_message(msg.content)
         elif isinstance(msg, AIMessage):
             firestore_history.add_ai_message(msg.content)
+
+if __name__ == '__main__':
+    ensure_faiss_db_exists()
+    handle_user_text_interaction()
